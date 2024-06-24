@@ -1,0 +1,8 @@
+to install the virtual environment you need to install virtualenv
+py -m install virtualenv
+
+To create a new virtualenv
+-py -m venv venv
+
+To activate the virtualenv
+venv\scripts/activate
