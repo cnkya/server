@@ -37,7 +37,7 @@ def saveProducts():
     #mock the save
     #items.append(product)
     return json.dumps(fix_id(product)) #returns the product id in json format/string
-    
+    #
 
 
 
