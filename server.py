@@ -1,9 +1,14 @@
 #Create an API object
 from flask import Flask, request # to import a library into the project / request comes with http
 import json
+from config import db
 
 # define golbal variables
 items = []
+
+def fix_id(obj): #turn the object id from mongodb into a string/text
+    obj["_id"]=str(obj["_id"])
+    return obj
 #
 app = Flask(__name__) # To use the name of the server / for backwards compatibility
 
@@ -28,9 +33,10 @@ def about():
 def saveProducts():
     product = request.get_json() #converts json to python object
     print (product)
+    db.products.insert_one(product) #sends it to the database "project1"
     #mock the save
-    items.append(product)
-    return json.dumps(product)
+    #items.append(product)
+    return json.dumps(fix_id(product)) #returns the product id in json format/string
     
 
 

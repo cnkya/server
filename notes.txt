@@ -5,4 +5,4 @@ To create a new virtualenv
 -py -m venv venv
 
 To activate the virtualenv
-venv\scripts/activate
+venv\scripts\activate
